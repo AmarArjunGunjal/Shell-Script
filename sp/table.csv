@@ -1,0 +1,13 @@
+#!/bin/bash
+
+stringpid=('pid' 760 776 7266 759)
+stringppid=('ppid' 1 1 757 1)
+stringcmd=('CMD' bin container pts cfd)
+stringMEM=('MEM '3.5 0.7 0.6 0.5)
+stringcpu=('CPU' 0.0 0.1 o.2 0.3)
+array_size=4
+for((i=0; i<array_size; i++))
+do
+echo ${stringpid[$i]} $'\t' ${stringppid[$i]} $'\t' ${stringcmd[$i]} $'\t' ${stringMEM[$i]} $'\t' ${stringcpu[$i]}
+done  | column -t -s$'\t'
+
