@@ -1,0 +1,54 @@
+#!/bin/bash -x
+
+read -p "Enter Number " number
+nvalue=$(($number/2))
+
+function isPrime()
+{
+for(( i=2; i<$nvalue; i++ ))
+do
+	value=$(($number%$i))
+	if [ $value == 0 ]
+	then
+	flag="false"
+	break
+	else
+	flag="true"
+	fi
+
+done
+echo $flag
+}
+
+flag1=$(isPrime $nvalue)
+
+
+if [ $flag1 == "true" ]
+then
+isPalindrome $number
+fi
+
+
+function isPalindrome()
+{
+	while [ $num1 -gt 0 ]
+	do
+	temp=$(($num1%10))
+	sum=$((($sum*10)+temp))
+	num1=$(($num1/10))
+
+	done
+
+	echo $sum
+
+}
+
+if [ $sum==$number ]
+then
+echo "Prime Palindrome"
+else
+echo "Not Palindrome"
+fi
+
+
+
